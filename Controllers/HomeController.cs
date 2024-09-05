@@ -1,6 +1,8 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using TP07___PreguntadORT.Models;
+using System.Data.SqlClient;
+using Dapper;
 
 namespace TP07___PreguntadORT.Controllers;
 
