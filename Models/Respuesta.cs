@@ -1,9 +1,9 @@
 public class Respuesta
 {
-public int idRespuesta {get;set;}
-public int idPregunta {get;set;}
-public int idOpcion {get;set;}
-public string Contenido {get;set;}
-public bool Correcta {get;set;}
-public string Foto {get;set;}
+    public int idRespuesta { get; set; }  
+    public int idPregunta { get; set; }
+    public string Opcion { get; set; }
+    public string Contenido { get; set; }
+    public bool Correcta { get; set; }
+    public string Foto { get; set; }
 }

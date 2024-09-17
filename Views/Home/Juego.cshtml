@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Juego";
+}
+
+<div class="container">
+    <h1>Juego en Progreso</h1>
+
+    <p><strong>Nombre de usuario:</strong> @ViewBag.username</p>
+    <p><strong>Puntaje actual:</strong> @Juego.PuntajeActual</p>
+
+    <h2>Pregunta:</h2>
+    <p>@ViewBag.siguientePregunta.Enunciado</p>
+
+    <form action="@Url.Action("VerificarRespuesta", "Home")" method="post">
+        @foreach (Respuesta respuesta in ViewBag.listaRespuestas)
+        {
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="respuesta_@respuesta.idRespuesta" name="idRespuesta" value="@respuesta.idRespuesta" required />
+                <label class="form-check-label" for="respuesta_@respuesta.idRespuesta">@respuesta.Contenido</label>
+            </div>
+        }
+        <input type="hidden" name="idPregunta" value="@ViewBag.siguientePregunta.idPregunta" />
+        <button type="submit" class="btn btn-primary w-100 mt-3">Enviar Respuesta</button>
+    </form>
+</div>
